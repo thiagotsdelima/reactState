@@ -1,7 +1,7 @@
 interface AreaProps {
   titulo: string
   sumario?: string
-  children: string
+  children: any
   cor: string
 }
 
