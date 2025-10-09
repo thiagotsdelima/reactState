@@ -5,7 +5,7 @@ export default function Estado() {
   const [texto, setTexto] = useState('')
 
   return (
-    <div className="p-20">
+    <div className="container bg-green-700 p-20 mt-20 rounded-2xl">
       <Area titulo="Criando Estado" cor="sky">
         <input
           type="text"
