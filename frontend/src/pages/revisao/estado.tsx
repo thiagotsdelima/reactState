@@ -11,7 +11,7 @@ export default function Estado() {
           type="text"
           value={texto}
           onChange={(e) => setTexto(e.target.value)}
-          className="w-full border border-sky-500/40 bg-zinc-800/60 rounded px-3 py-2 text-white outline-none focus:border-sky-400 focus:ring-1 focus:ring-sky-400 transition"
+          className="w-full border border-white bg-zinc-800/60 rounded px-3 py-2 text-white outline-none focus:border-white focus:ring-1 focus:ring-white transition"
           placeholder="Digite algo..."
         />
       </Area>
