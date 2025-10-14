@@ -1,5 +1,5 @@
 import MenuItem from '@/components/template/MenuItem'
-import { IconArrowsDownUp, IconForms } from '@tabler/icons-react'
+import { IconArrowsDownUp, IconForms, IconNumber } from '@tabler/icons-react'
 
 export default function Home() {
   return (
@@ -17,6 +17,7 @@ export default function Home() {
           texto="Comunicacao"
           url="/revisao/comunicacao"
         />
+        <MenuItem icon={<IconNumber />} texto="Basico" url="/basico" />
       </div>
     </div>
   )
