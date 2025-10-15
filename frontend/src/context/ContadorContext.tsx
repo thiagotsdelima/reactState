@@ -1,6 +1,12 @@
 import { createContext, useState } from 'react'
 
-const ContadorContext = createContext({} as any)
+interface ContadorContextProps {
+  num: number
+  increment: () => void
+  decrement: () => void
+}
+
+const ContadorContext = createContext<ContadorContextProps>({} as any)
 
 export function ContadorProvider(props: any) {
   const [num, setNum] = useState(0)
