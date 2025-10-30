@@ -1,8 +1,11 @@
-import produtos from '@/data/constants/produtos'
 import Area from '../template/Area'
 import ProdutoCard from './produtoCard'
+import { useContext } from 'react'
+import { CatalagoContext } from '@/context/CatalagoContext'
 
 export default function Catalago() {
+  const { produtos } = useContext(CatalagoContext)
+
   function renderizarProdutos() {
     return produtos.map((produto) => (
       <ProdutoCard produto={produto} key={produto.id} />
