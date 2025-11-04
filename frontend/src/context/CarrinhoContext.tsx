@@ -13,7 +13,18 @@ export function CarrinhoProvider(props: any) {
   const [itens, setItens] = useState<ItemCarrinho[]>([])
 
   function adicionarItem(produtos: Produtos) {
-    setItens([...itens, { produtos, quantidade: 1 }])
+    const existeItem = itens.find(
+      (item) => item.produtos.id === produtos.id
+    ) ?? { produtos, quantidade: 0 }
+    const novoItem = { ...existeItem, quantidade: existeItem.quantidade + 1 }
+    const itensSemItemAtualizado = itens.filter(
+      (item) => item.produtos.id !== produtos.id
+    )
+    setItens([...itensSemItemAtualizado, novoItem].sort(ordernaItem))
+  }
+
+  function ordernaItem(a: ItemCarrinho, b: ItemCarrinho) {
+    return a.produtos.nome.localeCompare(b.produtos.nome)
   }
 
   return (

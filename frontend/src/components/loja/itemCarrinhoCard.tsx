@@ -12,7 +12,7 @@ export default function ItemCarrinhoCard(props: ItemCarrinhoCardProps) {
   const { adicionarItem } = useContext(CarrinhoContext)
 
   return (
-    <div className="flex flex-col justify-center items-center gap-5 bg-black rounded-b-md p-2">
+    <div className="flex flex-row justify-center items-center gap-5 bg-black rounded-b-md p-2">
       <span className="text-center">{item.produtos.nome}</span>
       <div className="flex gap-2 items-center">
         <button className="h-5 w-5 bg-red-500 rounded-b-sm flex justify-center items-center">
