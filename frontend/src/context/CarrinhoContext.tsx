@@ -7,6 +7,7 @@ interface CarrinhoContextProps {
   adicionarItem: (produtos: Produtos) => void
   removerItem: (produtos: Produtos) => void
   valorTotal: number
+  limpar: () => void
 }
 
 export const CarrinhoContext = createContext<CarrinhoContextProps>({} as any)
@@ -65,6 +66,10 @@ export function CarrinhoProvider(props: any) {
     return a.produtos.nome.localeCompare(b.produtos.nome)
   }
 
+  function limpar() {
+    setItens([])
+  }
+
   return (
     <CarrinhoContext.Provider
       value={{
@@ -73,7 +78,8 @@ export function CarrinhoProvider(props: any) {
         removerItem,
         get valorTotal() {
           return cauculaTotalItens()
-        }
+        },
+        limpar
       }}
     >
       {props.children}
