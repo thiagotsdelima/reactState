@@ -3,7 +3,8 @@ import {
   IconArrowsDownUp,
   IconForms,
   IconNumber,
-  IconShoppingCart
+  IconShoppingCart,
+  IconVideo
 } from '@tabler/icons-react'
 
 export default function Home() {
@@ -24,6 +25,7 @@ export default function Home() {
         />
         <MenuItem icon={<IconNumber />} texto="Basico" url="/basico" />
         <MenuItem icon={<IconShoppingCart />} texto="Loja" url="/loja" />
+        <MenuItem icon={<IconVideo />} texto="EAD" url="/ead" />
       </div>
     </div>
   )
