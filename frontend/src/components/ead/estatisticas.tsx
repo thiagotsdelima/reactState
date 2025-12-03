@@ -2,7 +2,7 @@ import Estatistica from './estatistica'
 
 export default function Estatisticas() {
   return (
-    <div className="flex justify-around items-center w-4/5 h-24 bg-zinc-700 rounded-lg">
+    <div className="flex justify-around items-center w-4/5 h-24 bg-white/50 rounded-lg">
       <Estatistica valor={10} titulo="Qtde de aula" />
       <Estatistica valor={5} titulo="Aulas concluidas" />
       <Estatistica valor="2h:30" titulo="Duracao total" />
