@@ -1,4 +1,5 @@
 import Capitulo from '@/data/model/Capitulo'
+import AulaItem from './aulaItem'
 
 interface CapitulosItemProps {
   capitulo: Capitulo
@@ -22,7 +23,7 @@ export default function CapitulosItem(props: CapitulosItemProps) {
       </div>
       <div className="p-4">
         {capitulo.aulas.map((aula) => {
-          return <div key={aula.ordem}>{aula.titulo}</div>
+          return <AulaItem key={aula.ordem} aula={aula} selecionada={false} />
         })}
       </div>
     </div>
