@@ -1,14 +1,15 @@
-import capitulos from '@/data/constants/capitulos'
 import Estatisticas from './estatisticas'
 import Player from './player'
 import CapitulosItem from './capitulosItem'
+import { useContext } from 'react'
+import CursoContext from '@/context/CursoContext'
 
 export default function Sala() {
-  const MOCK = capitulos
+  const { capitulos } = useContext(CursoContext)
   return (
     <div className="flex">
       <div className="bg-zinc-800 w-96 h-screen overflow-auto">
-        {MOCK.map((capitulo) => {
+        {capitulos.map((capitulo) => {
           return <CapitulosItem key={capitulo.id} capitulo={capitulo} />
         })}
       </div>

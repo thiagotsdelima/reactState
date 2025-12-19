@@ -1,5 +1,7 @@
 import Capitulo from '@/data/model/Capitulo'
 import AulaItem from './aulaItem'
+import { useContext } from 'react'
+import CursoContext from '@/context/CursoContext'
 
 interface CapitulosItemProps {
   capitulo: Capitulo
@@ -7,7 +9,7 @@ interface CapitulosItemProps {
 
 export default function CapitulosItem(props: CapitulosItemProps) {
   const { capitulo } = props
-
+  const { aulaAtual } = useContext(CursoContext)
   return (
     <div>
       <div className="flex items-center gap-3 p-4 bg-zinc-900">
@@ -23,7 +25,13 @@ export default function CapitulosItem(props: CapitulosItemProps) {
       </div>
       <div className="p-4">
         {capitulo.aulas.map((aula) => {
-          return <AulaItem key={aula.ordem} aula={aula} selecionada={false} />
+          return (
+            <AulaItem
+              key={aula.ordem}
+              aula={aula}
+              selecionada={aulaAtual.ordem === aula.ordem}
+            />
+          )
         })}
       </div>
     </div>
