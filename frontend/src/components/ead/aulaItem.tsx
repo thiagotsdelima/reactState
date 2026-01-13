@@ -12,10 +12,13 @@ interface AulaItemProps {
 
 export default function AulaItem(props: AulaItemProps) {
   const { aula, selecionada } = props
-  const { selecionarAula } = useContext(CursoContext)
+  const { selecionarAula, alternarConclusaoAula } = useContext(CursoContext)
   return (
     <div className="flex items-center gap-2 py-1">
-      <AulaConclusao concluido={false} />
+      <AulaConclusao
+        concluido={aula.concluida ?? false}
+        onClick={() => alternarConclusaoAula(aula)}
+      />
       <div
         className="flex-1 flex flex-col cursor-pointer"
         onClick={() => selecionarAula(aula)}

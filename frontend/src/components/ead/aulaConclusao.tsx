@@ -17,6 +17,7 @@ export default function AulaConclusao(props: AulaConclusaoProps) {
             : 'bg-black border-zinc-400'
         }
       `}
+      onClick={props.onClick}
     >
       {props.concluido && <IconCheck size={14} color="white" />}
     </button>
